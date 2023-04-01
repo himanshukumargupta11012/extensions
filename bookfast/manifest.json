@@ -1,0 +1,20 @@
+{
+    "manifest_version":3,
+    "name":"bookfast",
+    "description":"for booking ticket fastly",
+    "version":"1.0",
+    "action":{
+        "default_popup":"popup.html",
+        "default_title":"hello guys"
+    },
+    "background":{
+        "service_worker":"background.js"
+    },
+    "content_scripts":[{
+        "matches":["https://www.irctc.co.in/nget/train-search"],
+        "css":["index.css"],
+        "js":["index.js"]
+    }],
+    "permissions": [
+        "tabs"]
+}

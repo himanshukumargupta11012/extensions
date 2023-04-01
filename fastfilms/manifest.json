@@ -1,0 +1,23 @@
+{
+    "manifest_version":3,
+    "name":"fastfilms",
+    "description":"downloading movies fastly",
+    "version":"1.0",
+    "action":{
+        "default_popup":"popup.html",
+        "default_title":"hello guys"
+    },
+    "background":{
+        "service_worker":"background.js"
+    },
+    "content_scripts":[{
+        "matches":["https://vegamovies.wtf/"],
+        "css":["index.css"],
+        "js":["index.js"]
+    },
+{
+    "matches":[]
+}],
+    "permissions": [
+        "tabs"]
+}

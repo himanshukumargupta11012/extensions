@@ -1,0 +1,21 @@
+{
+  "manifest_version":3,
+  "name":"PageFont Style",
+  "version":"1.0",
+  "description":"change styling of pages",
+  "action":{
+    "default_title":"PafeFontStyle",
+    "default_popup":"popup.html"
+  },
+  "background":{
+    "service_worker":"events.js"
+  },
+  "content_scripts":[
+    {
+      "matches":["https://developer.chrome.com/*"],
+      "js":["content.js","jquery-3.6.3.min.js"]
+
+    }
+  ],
+  "permissions":["tabs"]
+}

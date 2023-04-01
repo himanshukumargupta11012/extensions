@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var keyboardEvent = document.createEvent('KeyboardEvent');
+var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? 'initKeyboardEvent' : 'initKeyEvent';
+
+keyboardEvent[initMethod](
+  'keydown', // event type: keydown, keyup, keypress
+  true, // bubbles
+  true, // cancelable
+  window, // view: should be window
+  false, // ctrlKey
+  false, // altKey
+  false, // shiftKey
+  false, // metaKey
+  40, // keyCode: unsigned long - the virtual key code, else 0
+  0, // charCode: unsigned long - the Unicode character associated with the depressed key, else 0
+);
+document.dispatchEvent(keyboardEvent);
+    </script>
+</body>
+</html>
