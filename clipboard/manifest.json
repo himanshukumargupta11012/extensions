@@ -1,0 +1,41 @@
+{
+ "manifest_version": 3,
+ "version": "1.0",
+ "name": "cliboard",
+ "description": "copy from saved text later",
+ "action": {
+    "default_title": "clboard",
+    "default_popup": "popup.html"
+    
+ },
+ "commands": {
+   "add_text": {
+      "suggested_key": {
+         "default": "Ctrl+Shift+E",
+         "linux": "Ctrl+Shift+E",
+         "mac": "Command+Shift+E"
+      },
+      "description": "shortcut for copy and adding text to clipboard"
+   }
+ },
+ "permissions": [
+    "storage",
+    "contextMenus",
+    "tabs"
+ ],
+ "icons": {
+  "128": "./icons/clipboard_icon128.png",
+  "48": "./icons/clipboard_icon48.png",
+  "16": "./icons/clipboard_icon16.png"
+ },
+ "background": {
+   "service_worker": "background.js"
+ },
+ "content_scripts": [
+   {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"]
+   }
+ ]
+}
+
